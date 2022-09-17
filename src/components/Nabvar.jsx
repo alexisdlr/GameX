@@ -14,10 +14,10 @@ function Navbar() {
   const [open, setOpen] = useState(null)
   return ( 
     <motion.div initial={{y:-500}} animate={{y:0}} transition={{delay:.5}}> 
-      <Box as="header" maxW={1280} mx='auto' py={4} px={4} >
-        <Flex as="nav" h={100} justifyContent={'space-between'} gap={8} alignItems='center'>
+      <Box as="header" w={'full'} py={4} px={4} backdropFilter='auto' backdropBlur='8px' pos="fixed" zIndex={99}  >
+        <Flex as="nav" h={50} justifyContent={'center'} gap={8} alignItems='center'>
           <Box>
-            <Image boxSize={100} borderRadius='full' src={logo} alt='logo' />
+            <Image boxSize={50} borderRadius='full' src={logo} alt='logo' />
           </Box>
     
           <Flex as="ul" gap={2}>

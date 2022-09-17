@@ -6,16 +6,9 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-import CaptionCarousel from './Carousel';
 import Images from '../assets/Images';
 export function Hero() {
   return (
-    <motion.div
-    initial={{x:'100vw', opacity:0}}
-    animate={{x:0, opacity: 1}}
-    transition={{duration: .8}}
-    >
     <Stack 
     minH={'80vh'} 
     direction={{ base: 'column-reverse', md: 'row' }} 
@@ -24,7 +17,7 @@ export function Hero() {
     gap={10}
     mx={'auto'}
     px={4} 
-    my={2}
+    py={'32'}
     >
       <Flex flex={1} mx={0} align={'center'} justify={'center'}  >
         <Stack spacing={6} mx={0} w={'full'} maxW={'lg'}>
@@ -68,7 +61,5 @@ export function Hero() {
      
       </Flex>
     </Stack>
-    <CaptionCarousel />
-    </motion.div>
   );
 }

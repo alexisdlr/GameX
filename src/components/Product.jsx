@@ -8,7 +8,8 @@ import {
   Icon,
   chakra,
   Tooltip,
-  Button
+  Button,
+  Text
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
@@ -80,11 +81,28 @@ function ProductAddToCart() {
 
   return (
     <>
-     <Flex maxW={1280} mx={'auto'} px={4} my={5} gap={6} >
-        <Button value='xbox' onClick={handleClick}  >
+     <Flex maxW={1280} mx={'auto'} px={4} my={5} gap={6} alignItems={'center'} >
+        <Text 
+        color='text' 
+        as={'p'} 
+        fontWeight='bold'
+        fontSize={{base: 'sm', md: '2xl', lg:'2xl'}} >
+          Selecciona tu consola favorita:
+        </Text>
+        <Button 
+        value='xbox' 
+        onClick={handleClick} 
+        bgColor='text' 
+        color={'black'}
+        _hover={{opacity: .8}}
+        >
           Xbox
         </Button>
-        <Button value='Playstation' onClick={handleClick} >
+        <Button 
+        value='Playstation' 
+        onClick={handleClick} 
+        bgColor='primary'  
+        _hover={{opacity: .8}} >
           Playstation
         </Button>
      

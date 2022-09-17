@@ -1,4 +1,5 @@
 import { Box, Text, Heading, Flex } from "@chakra-ui/react"
+import Footer from "../components/Footer"
 import { Memberships } from "../components/Memberships"
 import Navbar from "../components/Nabvar"
 import ProductAddToCart from "../components/Product"
@@ -8,7 +9,7 @@ const Products = ( ) => {
 
     <Box mx={'auto'} px={4} >
       <Navbar />
-        <Flex maxW={1280} mx={'auto'} px={4} justifyContent={'start'} >
+        <Flex maxW={1280} mx={'auto'} px={4} py={28} justifyContent={'start'} >
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
                 <Text
                 as={'h2'}
@@ -31,6 +32,7 @@ const Products = ( ) => {
       <Box >
         <Memberships />
       </Box>
+      <Footer />
     </Box>
   )
 }

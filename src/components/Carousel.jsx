@@ -68,7 +68,7 @@ export default function CaptionCarousel() {
   ];
 
   return (
-    <Flex maxW={1280} px={4} mx='auto'  >
+    <Flex w={'full'}  mx='auto'  >
     <Box
       position={'relative'}
       height={'600px'}
@@ -137,7 +137,7 @@ export default function CaptionCarousel() {
               
 
                 >
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color='text' textShadow='2px 2px 5px #54FF90' >
+                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color='text' textShadow='1px 1px 6px #54FF90' >
                   {card.title}
                 </Heading>
                 <Text fontSize={{ base: 'md', lg: 'lg' }} color="#fff" fontWeight={'bold'} >
