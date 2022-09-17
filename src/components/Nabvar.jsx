@@ -4,18 +4,15 @@ import {
   ListItem,  
   Box,
   Flex,
-  Button,
-  Stack,
-  useColorMode,
+ 
    } from "@chakra-ui/react";
 import logo from '../assets/gamexlogo.jpg'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 import {Link} from 'react-router-dom'
+import {useState} from 'react'
 function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const [open, setOpen] = useState(null)
   return ( 
-    
     <motion.div initial={{y:-500}} animate={{y:0}} transition={{delay:.5}}> 
       <Box as="header" maxW={1280} mx='auto' py={4} px={4} >
         <Flex as="nav" h={100} justifyContent={'space-between'} gap={8} alignItems='center'>
@@ -25,11 +22,7 @@ function Navbar() {
     
           <Flex as="ul" gap={2}>
           <Flex alignItems={'center'}>
-              <Stack direction={'row'} spacing={7}>
-                <Button onClick={toggleColorMode}>
-                  {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-                </Button>
-              </Stack>
+            
             </Flex>
             <List display='flex' gap={2} >
               <ListItem padding={2} _hover={{  color: "text", transition:'300ms' }} >
@@ -43,7 +36,7 @@ function Navbar() {
                 </Link>
               </ListItem>
               <ListItem padding={2} _hover={{  color: "text", transition:'300ms' }} >
-                <Link>
+                <Link to='/acercade'>
                   Acerca de
                 </Link>
               </ListItem>

@@ -68,7 +68,7 @@ export default function CaptionCarousel() {
   ];
 
   return (
-    <Flex maxW={1280} px={4} mx='auto' >
+    <Flex maxW={1280} px={4} mx='auto'  >
     <Box
       position={'relative'}
       height={'600px'}

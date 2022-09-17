@@ -26,7 +26,7 @@ export function Hero() {
     px={4} 
     my={2}
     >
-      <Flex flex={1} mx={0} align={'center'} justify={'center'}>
+      <Flex flex={1} mx={0} align={'center'} justify={'center'}  >
         <Stack spacing={6} mx={0} w={'full'} maxW={'lg'}>
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
             <Text

@@ -8,7 +8,9 @@ import {
   Icon,
   chakra,
   Tooltip,
+  Button
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
@@ -45,11 +47,27 @@ function Rating({ rating, numReviews }) {
 function ProductAddToCart() {
   const [products, setProducts] = useState(null)
 
+  const handleClick = async (e) => {
+    try{
+      await fetch('http://localhost:3000/juegos')
+      .then(res => res.json())
+      .then(data => {
+        setProducts(data.filter(item => item.categoria === e.target.value))
+        console.log(data.filter(item => item.categoria === e.target.value))
+      })
+      
+     }
+     catch (error){
+       console.log(error)
+     }
+
+  }
+
   const getProducts = async () => {
       try{
        await fetch('http://localhost:3000/juegos')
        .then(res => res.json())
-       .then(data => setProducts(data))
+       .then(data => setProducts(data.filter(item => item.categoria === 'xbox')))
         
       }
       catch (error){
@@ -58,12 +76,25 @@ function ProductAddToCart() {
   }
   useEffect(() => {
     getProducts()
-  })
+  },[])
 
   return (
-    <Flex p={50} flexWrap='wrap' gap={8} w="full" alignItems="center" justifyContent="center">
-
+    <>
+     <Flex maxW={1280} mx={'auto'} px={4} my={5} gap={6} >
+        <Button value='xbox' onClick={handleClick}  >
+          Xbox
+        </Button>
+        <Button value='Playstation' onClick={handleClick} >
+          Playstation
+        </Button>
+     
+      </Flex>
+      <Flex p={50} flexWrap='wrap' gap={8} w="full" alignItems="center" justifyContent="center">
       {products ? products.map(data => (
+        <motion.div
+        initial={{opacity: 0}}
+        whileInView={{opacity: 1}}
+        >
 
         <Box
         bg={useColorModeValue('white', 'gray.800')}
@@ -140,9 +171,12 @@ function ProductAddToCart() {
           </Flex>
         </Box>
       </Box>
+      </motion.div>
             )) :''}
     
     </Flex>
+    
+    </>
   );
 }
 

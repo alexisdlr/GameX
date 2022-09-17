@@ -7,6 +7,7 @@ import { Oval } from 'react-loader-spinner'
 
 const Home = lazy(() => import('./pages/home'))
 const Products = lazy(() => import('./pages/products'))
+const About = lazy(() => import('./pages/About'))
 
 function App() {
 
@@ -33,6 +34,17 @@ function App() {
                 </Flex>
               }>
                 <Products />
+
+              </Suspense>
+            }
+            />
+               <Route path="/acercade" element={
+               <Suspense fallback={
+                <Flex h={'container.md'} justify={'center'} alignItems={'center'} >
+                  <Oval />
+                </Flex>
+              }>
+                <About />
 
               </Suspense>
             }

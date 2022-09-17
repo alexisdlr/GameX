@@ -1,12 +1,12 @@
-import {  Flex, Heading, Text, Image, Button } from "@chakra-ui/react"
+import {  Flex, Heading, Text, Image, Button, Box } from "@chakra-ui/react"
 import Images from "../assets/Images"
 
 export const Memberships = () => {
   return(
     <>
-      <Flex maxW={1280} mb={5} mx={'auto'} direction={'column'} px={4} justifyContent={'flex-start' }>
+      <Flex maxW={1280} mb={5} mx={'auto'} direction={'column'} px={4} justifyContent={'flex-start'}>
         <Heading  fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} >
-          <Text as={'h2'}>
+          <Text as={'h2'} color='text' >
            MEMBRESÍAS
           </Text>
         </Heading>
@@ -16,7 +16,7 @@ export const Memberships = () => {
       </Flex>
      
     
-      <Flex maxW={1280} mx={'auto'} px={4} gap={20} justify={'center'} flexWrap={'wrap'} >
+      <Flex maxW={1280} mx={'auto'} px={4} gap={20} justify={'center'} flexWrap={'wrap'} variant='radial' >
         <Flex direction={'column'} gap={5} justify={'center'} alignItems={'center'} > 
           <Image
             src={Images.xboxpass}
