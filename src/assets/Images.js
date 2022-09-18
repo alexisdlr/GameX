@@ -10,8 +10,11 @@ import logo from './gamexlogo.jpg'
 import xboxdis from './prt_xbox.png'
 import psdis from './prt_playstation.png'
 import blizzard from './prt_blizzard.png'
-
-
+import sldps from './SLD_ps.png'
+import sldxb from './SLD_xbox.png'
+import sldbliz from './SLD_blizzard.png'
+import steam from './prt_steam.png'
+import abf from './about-feature.jpg'
 export default {
   "logo": logo,
   "slide1": slide1,
@@ -24,6 +27,11 @@ export default {
   "abouthero": about,
   "xboxdis":xboxdis,
   "psdis": psdis,
-  "blizzard" : blizzard
+  "blizzard" : blizzard,
+  "sldps": sldps,
+  "sldxb": sldxb,
+  "sldbliz": sldbliz,
+  "steam" : steam,
+  "aboutfeature":abf
 
 }

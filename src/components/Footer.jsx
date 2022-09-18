@@ -1,6 +1,6 @@
 import { Flex, Heading, Box, Center, Image, Icon } from "@chakra-ui/react"
 import Images from "../assets/Images"
-import { FaTwitter, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaTwitter, FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return(
@@ -21,7 +21,7 @@ const Footer = () => {
         </Flex>
    
         <Flex gap={5} my={5}>
-          <Box as="a" href="#" target={'_blank'}>
+          <Box as="a" href="https://www.facebook.com/profile.php?id=100085535725822" target={'_blank'}>
             <Icon as={FaFacebook} h={7} w={7} _hover={{color:'text', transition: 'all 500ms ease-in-out'}} />
           </Box>
           <Box as="a" href="#" target={'_blank'}>
@@ -30,6 +30,10 @@ const Footer = () => {
           <Box as="a" href="#" target={'_blank'}>
             <Icon as={FaYoutube} h={7} w={7} _hover={{color:'text', transition: 'all 500ms ease-in-out'}} />
           </Box>
+          <Box as="a" href="#" target={'_blank'}>
+            <Icon as={FaInstagram} h={7} w={7} _hover={{color:'text', transition: 'all 500ms ease-in-out'}} />
+          </Box>
+
 
         </Flex>
         <Center bg={'black'} w={'100vw'} h={'24'} >

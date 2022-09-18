@@ -1,4 +1,5 @@
 import { Box, Text, Heading, Flex } from "@chakra-ui/react"
+import Balance from "../components/Balance"
 import Footer from "../components/Footer"
 import { Memberships } from "../components/Memberships"
 import Navbar from "../components/Nabvar"
@@ -26,11 +27,14 @@ const Products = ( ) => {
           </Heading>
         </Flex>
      
-      <Box>
+      <Box as="section">
         <ProductAddToCart />
       </Box>
-      <Box >
+      <Box as="section" >
         <Memberships />
+      </Box>
+      <Box as="section">
+        <Balance />
       </Box>
       <Footer />
     </Box>
