@@ -36,10 +36,12 @@ const Footer = () => {
 
 
         </Flex>
-        <Center bg={'black'} w={'100vw'} h={'24'} >
-          GameX, todos los derechos reservados 2022.
-        </Center>
+        
       </Flex>
+      <Center bg={'black'} w={'full'} h={'24'} >
+          GameX, todos los derechos reservados 2022.
+      </Center>
+    
     </Box>
   )
 }
