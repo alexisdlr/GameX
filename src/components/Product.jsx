@@ -104,6 +104,7 @@ function ProductAddToCart() {
         <motion.div
         initial={{opacity: 0}}
         whileInView={{opacity: 1}}
+        key={data.id}
         >
 
         <Box
