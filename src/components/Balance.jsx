@@ -27,7 +27,7 @@ const Balance = ( ) => {
             objectFit={'cover'}
             maxH={500}
           /> 
-          <Button>
+          <Button bg={'primary'} _hover={{opacity: .8}}>
             Agregar al carrito
           </Button>
         </Flex>
@@ -40,7 +40,7 @@ const Balance = ( ) => {
             objectFit={'cover'}
             maxH={500}
           /> 
-          <Button>
+          <Button bg={'primary'} _hover={{opacity: .8}} >
             Agregar al carrito
           </Button>
         </Flex>
@@ -53,7 +53,7 @@ const Balance = ( ) => {
             objectFit={'cover'}
             maxH={300}
           /> 
-          <Button>
+          <Button bg={'primary'} _hover={{opacity: .8}} >
             Agregar al carrito
           </Button>
         </Flex>

@@ -4,14 +4,30 @@ import Features from "../components/Features"
 import FeaturesGrid from "../components/FeaturesGrid"
 import Footer from "../components/Footer"
 import Navbar from "../components/Nabvar"
-
+import { motion } from 'framer-motion'
 const About = () => {
   return(
     <Box mx={'auto'} >
       <Navbar />
       <AboutHero />
-      <Features />
-      <FeaturesGrid />
+
+      <motion.div
+       initial={{opacity:0, x: 50}}
+       whileInView={{opacity: 1, x: 0}}
+       viewport={{once:false}}
+       transition={{duration: 1}}
+      >
+        <Features />
+      </motion.div>
+
+      <motion.div
+      initial={{opacity:0, x: 50}}
+      whileInView={{opacity: 1, x: 0}}
+      viewport={{once:false}}
+      transition={{duration: 1}}
+      >
+        <FeaturesGrid />
+      </motion.div>
       <Footer />
     </Box>
   )

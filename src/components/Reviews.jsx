@@ -1,16 +1,14 @@
 import { Heading, Flex, Box, Text, Image} from "@chakra-ui/react"
 import { useState, useEffect } from "react"
-
+import reviews from "../db/reviews"
 
 
 const Reviews = ( ) => {
-  const [reviews, setReviews] = useState(null)
+  const [reviewss, setReviewss] = useState(null)
 
   const getReviews = async () => {
     try{    
-      await fetch('http://localhost:3000/reviews')
-      .then(res => res.json())
-      .then(data => setReviews(data))
+      setReviewss(reviews)
   } catch(error) {
       console.log(error)
     }
@@ -26,7 +24,7 @@ const Reviews = ( ) => {
       </Heading>
 
       <Flex justify={'center'} alignItems={'center'} gap={8} wrap='wrap' >
-        {reviews ? reviews.map(review => (
+        {reviewss ? reviewss.map(review => (
           <Box 
           key={review.id} 
           maxW='80' 

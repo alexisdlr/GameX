@@ -4,6 +4,7 @@ import Footer from "../components/Footer"
 import { Memberships } from "../components/Memberships"
 import Navbar from "../components/Nabvar"
 import ProductAddToCart from "../components/Product"
+import { motion } from 'framer-motion'
 
 const Products = ( ) => {
   return(
@@ -31,10 +32,24 @@ const Products = ( ) => {
         <ProductAddToCart />
       </Box>
       <Box as="section" >
+      <motion.div
+      initial={{opacity:0, x: 50}}
+      whileInView={{opacity: 1, x: 0}}
+      viewport={{once:false}}
+      transition={{duration: 1}}
+      >
         <Memberships />
+      </motion.div>
       </Box>
       <Box as="section">
-        <Balance />
+        <motion.div
+        initial={{opacity:0, x: 50}}
+        whileInView={{opacity: 1, x: 0}}
+        viewport={{once:false}}
+        transition={{duration: 1}}
+        >
+          <Balance />
+        </motion.div>
       </Box>
       <Footer />
     </Box>

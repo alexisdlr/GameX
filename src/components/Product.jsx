@@ -15,7 +15,7 @@ import { motion } from 'framer-motion';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
-
+import games from '../db/games';
 
 function Rating({ rating, numReviews }) {
  
@@ -50,12 +50,7 @@ function ProductAddToCart() {
 
   const handleClick = async (e) => {
     try{
-      await fetch('http://localhost:3000/juegos')
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data.filter(item => item.categoria === e.target.value))
-        console.log(data.filter(item => item.categoria === e.target.value))
-      })
+        setProducts(games.filter(item => item.categoria === e.target.value))
       
      }
      catch (error){
@@ -66,10 +61,7 @@ function ProductAddToCart() {
 
   const getProducts = async () => {
       try{
-       await fetch('http://localhost:3000/juegos')
-       .then(res => res.json())
-       .then(data => setProducts(data.filter(item => item.categoria === 'xbox')))
-        
+       setProducts(games.filter(item => item.categoria === 'xbox'))  
       }
       catch (error){
         console.log(error)

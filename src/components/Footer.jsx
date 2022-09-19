@@ -5,7 +5,7 @@ import { FaTwitter, FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
 const Footer = () => {
   return(
     <Box >
-      <Flex w={'full'} direction={'column'} justify='center' alignItems={'center'} py={5} >
+      <Flex w={'full'} direction={'column'} justify='center' mt={'20'} alignItems={'center'} py={5} >
         <Flex gap={5} justify='center'>
           <Image 
           src={Images.logo}
