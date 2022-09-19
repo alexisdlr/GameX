@@ -43,7 +43,7 @@ const Features = () => {
                 color={'text'}
                 fontWeight={600}
                 fontSize={'sm'}
-                bg={useColorModeValue('text', 'primary')}
+                bg={'primary'}
                 p={4}
                 alignSelf={'flex-start'}
                 rounded={'md'}>

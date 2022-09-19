@@ -1,7 +1,7 @@
 import { Flex, Heading } from '@chakra-ui/react'
 const FacebookPage = () => {
   return(
-    <Flex direction={'column'} alignItems={'center'} justify={'center'} my={8} backdropBlur={'2px'} >
+    <Flex direction={'column'} alignItems={'center'} justify={'center'} my={8}  >
 
         <Heading mt={32} mb={8} fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color={'text'} >
           Siguenos en Facebook
