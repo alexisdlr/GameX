@@ -107,7 +107,7 @@ function ProductAddToCart() {
         >
 
         <Box
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={useColorModeValue('gray.800', 'transparent')}
         maxW="sm"
         borderWidth="1px"
         rounded="lg"
