@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import Footer from "../components/Footer"
 import Distributors from "../components/Distributors"
 import CaptionCarousel from "../components/Carousel"
+import Chat from "../components/Chat"
 
  const Home = () => {
   return(
@@ -44,6 +45,7 @@ import CaptionCarousel from "../components/Carousel"
       >
       <Distributors />
       </motion.div>
+      <Chat />
       <Footer />
     </Box>
   )
