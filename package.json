@@ -1,5 +1,9 @@
 {
-  "name": "awos-project",
+  "name": "GameX site",
+  "author": {
+    "name": "Alexis De León Rodriguez",
+    "email": "alexisdlr3009@hotmail.com"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
