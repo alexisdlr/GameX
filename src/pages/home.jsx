@@ -7,6 +7,7 @@ import Footer from "../components/Footer"
 import Distributors from "../components/Distributors"
 import CaptionCarousel from "../components/Carousel"
 import Chat from "../components/Chat"
+import { Whatsapp } from "../components/ReactWhatsapp"
 
  const Home = () => {
   return(
@@ -36,6 +37,8 @@ import Chat from "../components/Chat"
       >
         <Reviews />
       </motion.div>
+      <Whatsapp />
+
     
       <motion.div 
         initial={{opacity: 0}}
