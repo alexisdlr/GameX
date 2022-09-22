@@ -48,7 +48,6 @@ import { Whatsapp } from "../components/ReactWhatsapp"
       >
       <Distributors />
       </motion.div>
-      <Chat />
       <Footer />
     </Box>
   )
