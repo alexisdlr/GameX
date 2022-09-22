@@ -6,8 +6,7 @@ import { motion } from "framer-motion"
 import Footer from "../components/Footer"
 import Distributors from "../components/Distributors"
 import CaptionCarousel from "../components/Carousel"
-import Chat from "../components/Chat"
-import { Whatsapp } from "../components/ReactWhatsapp"
+import { WhatsappButton } from "../components/WhatsappButton"
 
  const Home = () => {
   return(
@@ -20,7 +19,10 @@ import { Whatsapp } from "../components/ReactWhatsapp"
         viewport={{once: false}}
       >
       <Hero />
+      
       </motion.div>
+
+      <WhatsappButton />
       <motion.div 
         initial={{opacity: 0, x: 50}}
         whileInView={{opacity:1, x:0}}
@@ -37,8 +39,6 @@ import { Whatsapp } from "../components/ReactWhatsapp"
       >
         <Reviews />
       </motion.div>
-      <Whatsapp />
-
     
       <motion.div 
         initial={{opacity: 0}}

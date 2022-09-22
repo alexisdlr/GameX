@@ -1875,7 +1875,7 @@ postcss@^8.4.16:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.6.2:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -1940,13 +1940,6 @@ react-loader-spinner@^5.3.4:
     styled-components "^5.3.5"
     styled-tools "^1.7.2"
 
-react-messenger-customer-chat@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/react-messenger-customer-chat/-/react-messenger-customer-chat-0.8.0.tgz#c0696af9f71d5804a1b1149ae67d672802dee15d"
-  integrity sha512-7HItF+2nElXCBLi1q5eccgE9X4P86BmjmzF5nBcok+hJNWVjdKJTdWxl9VZTQnjkp3GHB7WwTwN2l3d/RKmFuQ==
-  dependencies:
-    prop-types "^15.6.0"
-
 react-refresh@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
@@ -2004,11 +1997,6 @@ react-style-singleton@^2.2.1:
     get-nonce "^1.0.0"
     invariant "^2.2.4"
     tslib "^2.0.0"
-
-react-whatsapp@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/react-whatsapp/-/react-whatsapp-0.3.0.tgz#1d8909939112b90411a70189be2677bdb6d53ac6"
-  integrity sha512-ZuCKhd30crVVNdLf/3BfDffqEOZLFW6mYRITA4fB6Vk5p3TU1Gl3YfTEfLE/7W+kTuwYPzF6aDnzbNt6GcatiQ==
 
 react@^18.2.0:
   version "18.2.0"
