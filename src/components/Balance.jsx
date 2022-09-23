@@ -8,7 +8,6 @@ import {
 import Images from "../assets/Images"
 const Balance = ( ) => {
   return(
-
        <>
        <Flex maxW={1280} my={8} mx={'auto'} direction={'column'} px={4} justifyContent={'flex-start'}>
           <Heading  fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} >

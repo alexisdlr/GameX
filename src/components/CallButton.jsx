@@ -2,7 +2,6 @@ import {
   Button,
   Image
 } from '@chakra-ui/react'
-import {AiFillPhone} from 'react-icons/ai'
 import phone from '../assets/phone.png'
 const CallButton = () => {
   return(
