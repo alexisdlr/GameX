@@ -11,11 +11,11 @@ const CallButton = () => {
     href='tel:+528621204545' 
     target={'_blank'}
     position={'fixed'}
-    left={'5'}
+    left={{base: '1', md: '5'}}
     zIndex='9999'
     top='60'
-    w={'20'} 
-    height={'20'}  
+    w={{base: '14', md: '20'}} 
+    height={{base: '14', md: '20'}}  
     bg={'transparent'}
     rounded={'full'}
 
