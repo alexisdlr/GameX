@@ -7,6 +7,7 @@ import Footer from "../components/Footer"
 import Distributors from "../components/Distributors"
 import CaptionCarousel from "../components/Carousel"
 import { WhatsappButton } from "../components/WhatsappButton"
+import CallButton from "../components/CallButton"
 
  const Home = () => {
   return(
@@ -23,6 +24,7 @@ import { WhatsappButton } from "../components/WhatsappButton"
       </motion.div>
 
       <WhatsappButton />
+      <CallButton />
       <motion.div 
         initial={{opacity: 0, x: 50}}
         whileInView={{opacity:1, x:0}}
