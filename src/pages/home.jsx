@@ -8,6 +8,7 @@ import Distributors from "../components/Distributors"
 import CaptionCarousel from "../components/Carousel"
 import { WhatsappButton } from "../components/WhatsappButton"
 import CallButton from "../components/CallButton"
+import YoutubeFrame from "../components/YoutubeFrame"
 
  const Home = () => {
   return(
@@ -41,7 +42,7 @@ import CallButton from "../components/CallButton"
       >
         <Reviews />
       </motion.div>
-    
+    <YoutubeFrame />
       <motion.div 
         initial={{opacity: 0}}
         whileInView={{opacity:1}}
