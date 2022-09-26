@@ -61,7 +61,13 @@ function ProductAddToCart() {
 
   const getProducts = async () => {
       try{
-       setProducts(games.filter(item => item.categoria === 'xbox'))  
+        await fetch ('http://localhost:3000/api/products')
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          setProducts(data.filter(item => item.categoria === 'xbox'))
+
+        })
       }
       catch (error){
         console.log(error)
@@ -177,7 +183,7 @@ function ProductAddToCart() {
               <Box as="span" color={'gray.600'} fontSize="lg">
                 $
               </Box>
-              {data.precio.toFixed(2)}
+              {data.precio}
             </Box>
           </Flex>
         </Box>

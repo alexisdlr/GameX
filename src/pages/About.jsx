@@ -6,6 +6,7 @@ import Footer from "../components/Footer"
 import Navbar from "../components/Nabvar"
 import { motion } from 'framer-motion'
 import FacebookPage from "../components/FacebookPage"
+import Contact from "../components/Contact"
 const About = () => {
   return(
     <Box mx={'auto'} >
@@ -28,8 +29,8 @@ const About = () => {
       transition={{duration: 1}}
       >
         <FeaturesGrid />
-
       </motion.div>
+      <Contact />
       <FacebookPage />
       <Footer />
     </Box>
