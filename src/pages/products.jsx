@@ -7,6 +7,7 @@ import ProductAddToCart from "../components/Product"
 import { motion } from 'framer-motion'
 
 const Products = ( ) => {
+  
   return(
 
     <Box mx={'auto'} px={4} >

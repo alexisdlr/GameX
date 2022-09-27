@@ -1,14 +1,17 @@
 import { Heading, Flex, Box, Text, Image} from "@chakra-ui/react"
 import { useState, useEffect } from "react"
-import reviews from "../db/reviews"
 
 
 const Reviews = ( ) => {
   const [reviewss, setReviewss] = useState(null)
 
   const getReviews = async () => {
-    try{    
-      setReviewss(reviews)
+    try{ 
+      await fetch('https://gamex-api-nodejs-production.up.railway.app/api/clients')  
+      .then(res => res.json())
+      .then(data => {
+        setReviewss(data)
+      }) 
   } catch(error) {
       console.log(error)
     }

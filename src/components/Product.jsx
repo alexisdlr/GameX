@@ -61,7 +61,7 @@ function ProductAddToCart() {
 
   const getProducts = async () => {
       try{
-        await fetch ('http://localhost:3000/api/products')
+        await fetch ('https://gamex-api-nodejs-production.up.railway.app/api/products')
         .then(res => res.json())
         .then(data => {
           console.log(data)
