@@ -16,7 +16,7 @@ const About = () => {
       <motion.div
        initial={{opacity:0, x: 50}}
        whileInView={{opacity: 1, x: 0}}
-       viewport={{once:false}}
+       viewport={{once:true}}
        transition={{duration: 1}}
       >
         <Features />
@@ -25,7 +25,7 @@ const About = () => {
       <motion.div
       initial={{opacity:0, x: 50}}
       whileInView={{opacity: 1, x: 0}}
-      viewport={{once:false}}
+      viewport={{once:true}}
       transition={{duration: 1}}
       >
         <FeaturesGrid />
