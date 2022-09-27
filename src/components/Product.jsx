@@ -15,7 +15,6 @@ import { motion } from 'framer-motion';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
-import games from '../db/games';
 
 function Rating({ rating, numReviews }) {
  
@@ -50,8 +49,9 @@ function ProductAddToCart() {
 
   const handleClick = async (e) => {
     try{
-        setProducts(games.filter(item => item.categoria === e.target.value))
-      
+      await fetch ('https://gamex-api-nodejs-production.up.railway.app/api/products')
+      .then(res => res.json())
+      .then(data => setProducts(data.filter(item => item.categoria === e.target.value)))
      }
      catch (error){
        console.log(error)
