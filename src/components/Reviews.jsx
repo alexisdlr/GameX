@@ -39,7 +39,7 @@ const Reviews = ( ) => {
           >
             <Flex justify={'center'}>
               <Image
-              src={review.image}
+              src={review.imagen}
               alt={`image of ${review.nombre}`}
               rounded={'full'}
               maxW={'10'}
