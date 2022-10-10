@@ -132,19 +132,21 @@ function ProductAddToCart({ productData, isCart, click }) {
            
                 {isCart === false ? (
                   <Tooltip
-                   label="Add to cart"
-                   bg="white"
+                   label="Agregar al carrito"
+                   bg={'transparent'}
                    placement={'top'}
                    color={'gray.800'}
+                   _hover={{opacity: .7}}
                    fontSize={'1.2em'}>
-                  <Button display='flex' >
-                    <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} onClick={() => addItemToCart(data)}/>
+                  <Button display='flex' onClick={() => addItemToCart(data)} >
+                    <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
                   </Button>
                 </Tooltip>
                 ) : (
                   <Button display='flex' onClick={() => deleteItemToCart(data)} 
                   color={'red.500'} 
                   bg={'transparent'}
+                  _hover={{opacity: .7}}
                   border={'1px solid red'} >
                     Eliminar
                   </Button>

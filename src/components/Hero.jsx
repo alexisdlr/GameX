@@ -16,8 +16,10 @@ export function Hero() {
     maxW={1280} 
     gap={10}
     mx={'auto'}
-    px={4} 
-    py={'32'}
+    px={4}
+    pb={'32'}
+    pt={'48'} 
+
     >
       <Flex flex={1} mx={0} align={'center'} justify={'center'}  >
         <Stack spacing={6} mx={0} w={'full'} maxW={'lg'}>

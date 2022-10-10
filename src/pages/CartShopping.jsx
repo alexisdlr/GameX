@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react'
 import React from 'react'
 import Navbar from '../components/Nabvar'
 import ProductAddToCart from '../components/Product'
@@ -25,30 +25,51 @@ export const deleteItemToCart = (itemClicked) => {
 
 function CartShopping() {
   const [stateN, setStateN] = useState(incomingProducts);
-  console.log(incomingProducts)
-  console.log(stateN)
+  
+  let initialValue = 0
+  const total = stateN
+  .map((item) => [item.precio])
+  .reduce((previousValue, currentValue) => parseInt(previousValue) + parseInt(currentValue), initialValue)
+
   return (
-    <Box minH={'80vh'}>
+    <Box minH={'100vh'}>
       <Navbar />
-      <Flex pt={32} direction={'column'} alignItems={'center'} >
-        <Heading>
+      <Flex 
+      pt={32} 
+      maxW={1350}
+      mx={'auto'} 
+      direction={'column'} 
+      alignItems={'center'} >
+        <Heading alignSelf={'start'} color={'text'}>
           Bienvenido a tu carrito personal!
         </Heading>
       {incomingProducts.length ? (
-					<div >
-						<ProductAddToCart productData={stateN} isCart={true} />
-						<div>
-							<p>
-								Select the products to be deleted and click "Delete products".
-							</p>
-							<Button onClick={() => setStateN(incomingProducts)}>
-								Delete products
-							</Button>
-						</div>
-					</div>
+					  <Box>
+						  <ProductAddToCart productData={stateN} isCart={true} />
+						<Box>
+            <Box fontSize={'4xl'} py={5}>
+              Total a pagar = ${
+                total
+              }
+            </Box>
+              <Box>
+                <Text>
+                  Seleccione los productos que quieres eliminar y da click en "Eliminar productos".
+                </Text>
+                <Button 
+                  color={'red.500'} 
+                  bg={'transparent'}
+                  border={'1px solid red'}
+                  _hover={{opacity: .7}}
+                  onClick={() => setStateN(incomingProducts)}>
+                  Eliminar productos
+                </Button>
+              </Box>
+						</Box>
+					</Box>
 				) : (
-					<Box>
-						<Heading>Lo sentimos, aún no tienes productos en tu carrito.</Heading>
+					<Box py={8} minH={'500px'} display={'flex'} alignItems={'center'}>
+						<Text color={'red.600'} fontSize={{base: '2xl', md: '4xl'}} fontWeight={'bold'}>Lo sentimos, aún no tienes productos en tu carrito.</Text>
 					</Box>
 				)}
       </Flex>
