@@ -6,7 +6,6 @@ import {
   Badge,
   useColorModeValue,
   Icon,
-  chakra,
   Tooltip,
   Button,
   Text
@@ -14,7 +13,7 @@ import {
 import { motion } from 'framer-motion';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
-import { useEffect, useState } from 'react';
+import { addItemToCart, deleteItemToCart } from '../pages/CartShopping';
 
 function Rating({ rating, numReviews }) {
  
@@ -44,69 +43,42 @@ function Rating({ rating, numReviews }) {
   );
 }
 
-function ProductAddToCart() {
-  const [products, setProducts] = useState(null)
-
-  const handleClick = async (e) => {
-    try{
-      await fetch ('https://gamex-api-nodejs-production.up.railway.app/api/products')
-      .then(res => res.json())
-      .then(data => setProducts(data.filter(item => item.categoria === e.target.value)))
-     }
-     catch (error){
-       console.log(error)
-     }
-
-  }
-
-  const getProducts = async () => {
-      try{
-        await fetch ('https://gamex-api-nodejs-production.up.railway.app/api/products')
-        .then(res => res.json())
-        .then(data => {
-          console.log(data)
-          setProducts(data.filter(item => item.categoria === 'xbox'))
-
-        })
-      }
-      catch (error){
-        console.log(error)
-      }
-  }
-  useEffect(() => {
-    getProducts()
-  },[])
+function ProductAddToCart({ productData, isCart, click }) {
 
   return (
     <>
-     <Flex maxW={1280} mx={'auto'} px={4} my={5} gap={6} alignItems={'center'} >
-        <Text 
-        color='text' 
-        as={'p'} 
-        fontWeight='bold'
-        fontSize={{base: 'sm', md: '2xl', lg:'2xl'}} >
-          Selecciona tu consola favorita:
-        </Text>
-        <Button 
-        value='xbox' 
-        onClick={handleClick} 
-        bgColor='text' 
-        color={'black'}
-        _hover={{opacity: .8}}
-        >
-          Xbox
-        </Button>
-        <Button 
-        value='Playstation' 
-        onClick={handleClick} 
-        bgColor='primary'  
-        _hover={{opacity: .8}} >
-          Playstation
-        </Button>
-     
-      </Flex>
+     {isCart === false ? (
+      <Flex maxW={1280} mx={'auto'} px={4} my={5} gap={6} alignItems={'center'} >
+      <Text 
+      color='text' 
+      as={'p'} 
+      fontWeight='bold'
+      fontSize={{base: 'sm', md: '2xl', lg:'2xl'}} >
+        Selecciona tu consola favorita:
+      </Text>
+      <Button 
+      value='xbox' 
+      onClick={click} 
+      bgColor='text' 
+      color={'black'}
+      _hover={{opacity: .8}}
+      >
+        Xbox
+      </Button>
+      <Button 
+      value='Playstation' 
+      onClick={click} 
+      bgColor='primary'  
+      _hover={{opacity: .8}} >
+        Playstation
+      </Button>
+   
+    </Flex>
+     ): ''
+      }
       <Flex p={50} flexWrap='wrap' gap={8} w="full" alignItems="center" justifyContent="center">
-      {products ? products.map(data => (
+      {
+      productData ? productData.map(data => (
         <motion.div
         initial={{opacity: 0}}
         whileInView={{opacity: 1}}
@@ -157,16 +129,28 @@ function ProductAddToCart() {
               {data.nombre}
             </Box>
            
-            <Tooltip
-              label="Add to cart"
-              bg="white"
-              placement={'top'}
-              color={'gray.800'}
-              fontSize={'1.2em'}>
-              <chakra.a href={'#'} display='flex' >
-                <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
-              </chakra.a>
-            </Tooltip>
+           
+                {isCart === false ? (
+                  <Tooltip
+                   label="Add to cart"
+                   bg="white"
+                   placement={'top'}
+                   color={'gray.800'}
+                   fontSize={'1.2em'}>
+                  <Button display='flex' >
+                    <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} onClick={() => addItemToCart(data)}/>
+                  </Button>
+                </Tooltip>
+                ) : (
+                  <Button display='flex' onClick={() => deleteItemToCart(data)} 
+                  color={'red.500'} 
+                  bg={'transparent'}
+                  border={'1px solid red'} >
+                    Eliminar
+                  </Button>
+                )
+                }
+              
           </Flex>
           <Box
               fontSize="small"
@@ -189,7 +173,7 @@ function ProductAddToCart() {
         </Box>
       </Box>
       </motion.div>
-            )) :''}
+            )): '' }
     
     </Flex>
     

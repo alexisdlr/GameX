@@ -5,9 +5,40 @@ import { Memberships } from "../components/Memberships"
 import Navbar from "../components/Nabvar"
 import ProductAddToCart from "../components/Product"
 import { motion } from 'framer-motion'
+import { useState, useEffect } from "react"
 
 const Products = ( ) => {
-  
+  const [products, setProducts] = useState(null)
+
+  const handleClick = async (e) => {
+    try{
+      await fetch ('https://gamex-api-nodejs-production.up.railway.app/api/products')
+      .then(res => res.json())
+      .then(data => setProducts(data.filter(item => item.categoria === e.target.value)))
+     }
+     catch (error){
+       console.log(error)
+     }
+
+  }
+
+  const getProducts = async () => {
+      try{
+        await fetch ('https://gamex-api-nodejs-production.up.railway.app/api/products')
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          setProducts(data.filter(item => item.categoria === 'xbox'))
+
+        })
+      }
+      catch (error){
+        console.log(error)
+      }
+  }
+  useEffect(() => {
+    getProducts()
+  },[])
   return(
 
     <Box mx={'auto'} px={4} >
@@ -30,7 +61,7 @@ const Products = ( ) => {
         </Flex>
      
       <Box as="section">
-        <ProductAddToCart />
+        <ProductAddToCart productData={products} click={handleClick} isCart={false}/>
       </Box>
       <Box as="section" >
       <motion.div

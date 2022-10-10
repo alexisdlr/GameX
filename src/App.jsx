@@ -8,7 +8,8 @@ import { Oval } from 'react-loader-spinner'
 const Home = lazy(() => import('./pages/home'))
 const Products = lazy(() => import('./pages/products'))
 const About = lazy(() => import('./pages/About'))
-
+const AddProduct = lazy(() => import('./pages/addProduct'))
+const CartShopping = lazy(() => import('./pages/CartShopping'))
 function App() {
 
   return (
@@ -45,6 +46,28 @@ function App() {
                 </Flex>
               }>
                 <About />
+
+              </Suspense>
+            }
+            />
+            <Route path="/admin" element={
+               <Suspense fallback={
+                <Flex h={'container.md'} justify={'center'} alignItems={'center'} >
+                  <Oval />
+                </Flex>
+              }>
+                <AddProduct />
+
+              </Suspense>
+            }
+            />
+            <Route path="/cart" element={
+               <Suspense fallback={
+                <Flex h={'container.md'} justify={'center'} alignItems={'center'} >
+                  <Oval />
+                </Flex>
+              }>
+                <CartShopping />
 
               </Suspense>
             }

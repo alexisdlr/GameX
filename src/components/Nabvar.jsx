@@ -40,6 +40,11 @@ function Navbar() {
                   Acerca de
                 </Link>
               </ListItem>
+              <ListItem padding={2} _hover={{  color: "text", transition:'300ms' }} >
+                <Link to='/cart'>
+                  Carrito
+                </Link>
+              </ListItem>
             </List>
           </Flex>
         </Flex>
