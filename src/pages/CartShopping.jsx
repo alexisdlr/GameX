@@ -47,12 +47,12 @@ function CartShopping() {
 					  <Box>
 						  <ProductAddToCart productData={stateN} isCart={true} />
 						<Box>
-            <Box fontSize={'4xl'} py={5}>
-              Total a pagar = ${
+            <Text px={{base: 8, md: 0}} fontSize={{base: '2xl', md: '5xl'}} fontWeight={'semibold'} py={5}>
+              Total a pagar = <Text as={'span'} color='text'>$</Text>{
                 total
               }
-            </Box>
-              <Box>
+            </Text>
+              <Flex px={{base: 8, md: 0}} direction={'column'} gap={5}>
                 <Text>
                   Seleccione los productos que quieres eliminar y da click en "Eliminar productos".
                 </Text>
@@ -60,11 +60,11 @@ function CartShopping() {
                   color={'red.500'} 
                   bg={'transparent'}
                   border={'1px solid red'}
-                  _hover={{opacity: .7}}
+                  _hover={{opacity: .7, bg: 'red.500', color: 'white'}}
                   onClick={() => setStateN(incomingProducts)}>
                   Eliminar productos
                 </Button>
-              </Box>
+              </Flex>
 						</Box>
 					</Box>
 				) : (
