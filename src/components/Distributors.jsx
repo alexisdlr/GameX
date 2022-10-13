@@ -5,7 +5,7 @@ const Distributors = () => {
     <>
        <Flex maxW={1280} my={8} mx={'auto'} direction={'column'} px={4} justifyContent={'flex-start'}>
           <Heading  fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} >
-            <Text as={'h2'} color='text' >
+            <Text as={'h3'} color='text' >
                Distribuidores Oficiales
             </Text>
           </Heading>

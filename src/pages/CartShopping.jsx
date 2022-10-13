@@ -3,7 +3,9 @@ import React from 'react'
 import Navbar from '../components/Nabvar'
 import ProductAddToCart from '../components/Product'
 import { useState } from 'react'
-
+import {motion} from 'framer-motion'
+import { useEffect } from 'react'
+import Paypal from '../components/Paypal'
 let incomingProducts = []
 export const addItemToCart = (newItem) => {
 	incomingProducts.push(newItem)
@@ -25,15 +27,23 @@ export const deleteItemToCart = (itemClicked) => {
 
 function CartShopping() {
   const [stateN, setStateN] = useState(incomingProducts);
-  
+  const [checkout, setCheckout] = useState(false)
+
   let initialValue = 0
   const total = stateN
   .map((item) => [item.precio])
   .reduce((previousValue, currentValue) => parseInt(previousValue) + parseInt(currentValue), initialValue)
 
+  
   return (
     <Box minH={'100vh'}>
       <Navbar />
+    <motion.div
+       initial={{opacity:0, x: 50}}
+       whileInView={{opacity: 1, x: 0}}
+       viewport={{once:true}}
+       transition={{duration: 1}}
+      >
       <Flex 
       pt={32} 
       maxW={1350}
@@ -46,7 +56,23 @@ function CartShopping() {
       {incomingProducts.length ? (
 					  <Box>
 						  <ProductAddToCart productData={stateN} isCart={true} />
+              { checkout ? (
+                <Paypal total={total}/>
+              ) : (
+                <Button 
+                bg={'text'} 
+                color={'#000'} 
+                _hover={{opacity: .7}}
+                onClick={setCheckout(true)}
+                fontWeight={'bold'}>
+                    Pagar ${
+                      total
+                    }
+                </Button> 
+              ) }
+          
 						<Box>
+            
             <Text px={{base: 8, md: 0}} fontSize={{base: '2xl', md: '5xl'}} fontWeight={'semibold'} py={5}>
               Total a pagar = <Text as={'span'} color='text'>$</Text>{
                 total
@@ -73,6 +99,7 @@ function CartShopping() {
 					</Box>
 				)}
       </Flex>
+      </motion.div>
     </Box>
   )
 }

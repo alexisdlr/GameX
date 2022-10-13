@@ -150,8 +150,10 @@ function ProductAddToCart({ productData, isCart, click }) {
                   color={'red.500'} 
                   bg={'transparent'}
                   _hover={{opacity: .7}}
-                  border={'1px solid red'} >
-                    Eliminar
+                  border={'1px solid red'}
+                  fontSize={'.895rem'}
+                  >
+                    Seleccionar
                   </Button>
                 )
                 }
