@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useRef } from 'react'
 const Paypal = ({total}) => {
   const paypal = useRef()
+  console.log(window)
   useEffect(() => {
     window.paypal.Buttons({
       createOrder: (data, actions, err) => {
@@ -11,7 +12,7 @@ const Paypal = ({total}) => {
             {
               description: 'cool looking order',
               amount: {
-                currency_code: 'MX',
+                currency_code: 'MXN',
                 value: total
               }
             }
@@ -28,9 +29,7 @@ const Paypal = ({total}) => {
     }).render(paypal.current)
   },[])
   return (
-    <div>
-        <div ref={paypal}></div>
-    </div>
+    <div ref={paypal}></div>
   )
 }
 

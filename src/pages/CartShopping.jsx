@@ -56,28 +56,17 @@ function CartShopping() {
       {incomingProducts.length ? (
 					  <Box>
 						  <ProductAddToCart productData={stateN} isCart={true} />
-              { checkout ? (
-                <Paypal total={total}/>
-              ) : (
-                <Button 
-                bg={'text'} 
-                color={'#000'} 
-                _hover={{opacity: .7}}
-                onClick={setCheckout(true)}
-                fontWeight={'bold'}>
-                    Pagar ${
-                      total
-                    }
-                </Button> 
-              ) }
-          
-						<Box>
-            
-            <Text px={{base: 8, md: 0}} fontSize={{base: '2xl', md: '5xl'}} fontWeight={'semibold'} py={5}>
+              <Text px={{base: 8, md: 0}} fontSize={{base: '2xl', md: '5xl'}} fontWeight={'semibold'} py={5}>
               Total a pagar = <Text as={'span'} color='text'>$</Text>{
                 total
               }
-            </Text>
+               </Text>
+       
+             <Paypal total={total}/>  
+          
+						<Box>
+            
+           
               <Flex px={{base: 8, md: 0}} direction={'column'} gap={5}>
                 <Text>
                   Seleccione los productos que quieres eliminar y da click en "Eliminar productos".
