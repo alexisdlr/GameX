@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useRef } from 'react'
 const Paypal = ({total}) => {
   const paypal = useRef()
-  console.log(window)
   useEffect(() => {
     window.paypal.Buttons({
       createOrder: (data, actions, err) => {
@@ -19,9 +18,9 @@ const Paypal = ({total}) => {
           ]
         })
       },
-      onAprove: async (data, actions) => {
+      onApprove: async (data, actions) => {
         const order = await actions.order.capture()
-        console.log(order)
+        console.log(order) 
       },
       onError: async (err) => {
         console.log(err)
