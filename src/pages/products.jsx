@@ -12,7 +12,7 @@ const Products = ( ) => {
 
   const handleClick = async (e) => {
     try{
-      await fetch ('https://gamex-api-nodejs-production.up.railway.app/api/products')
+      await fetch ('https://gamex-api-nodejs-production-89c6.up.railway.app/api/products')
       .then(res => res.json())
       .then(data => setProducts(data.filter(item => item.categoria === e.target.value)))
      }
